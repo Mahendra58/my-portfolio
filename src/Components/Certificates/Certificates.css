@@ -1,0 +1,161 @@
+/* =============================================
+   CERTIFICATES — Badge Cards with Glow
+   ============================================= */
+
+.certificates {
+  background: transparent;
+}
+
+.certificates_gradient_header {
+  background: var(--bg-primary);
+  padding-top: 100px;
+}
+
+.certificates_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 40px 80px 80px 80px;
+  background: var(--bg-primary);
+}
+
+/* Certificate Card — Glass with Badge Accent */
+.certificate_card {
+  background: var(--glass-bg);
+  border-radius: var(--card-radius);
+  padding: 28px;
+  border: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: var(--transition-base);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top gradient accent line */
+.certificate_card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.certificate_card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-glow-purple);
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+}
+
+.certificate_card:hover::before {
+  opacity: 1;
+}
+
+.certificate_header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.certificate_icon {
+  flex-shrink: 0;
+  color: var(--accent-blue);
+  stroke: var(--accent-blue);
+}
+
+.certificate_name {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.certificate_details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 4px 0;
+}
+
+.certificate_issuer {
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.certificate_date {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.issuer_label {
+  color: var(--text-dim);
+}
+
+.issuer_name {
+  color: var(--text-secondary);
+}
+
+.certificate_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-blue);
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: var(--transition-base);
+  position: relative;
+}
+
+.certificate_link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gradient-primary);
+  transition: width var(--transition-base);
+}
+
+.certificate_link:hover {
+  color: var(--accent-purple);
+}
+
+.certificate_link:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .certificates_container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 40px 50px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .certificates_container {
+    grid-template-columns: 1fr;
+    padding: 30px 24px;
+    gap: 16px;
+  }
+
+  .certificates_gradient_header {
+    padding-top: 80px;
+  }
+}

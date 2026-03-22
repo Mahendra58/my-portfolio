@@ -1,119 +1,160 @@
-.connect-image{
-    width:60%;
+/* =============================================
+   CONNECT — Glassmorphic Contact Form
+   ============================================= */
+
+.connect_container {
+  background: transparent;
+  width: 100%;
 }
 
-
-#connect_heading{
-    background:none;
+#connect_heading {
+  background: none;
 }
 
-.connect_container2{
-    align-items: center;
-
-    display:flex;
-    position:relative;
-    padding:80px;
-    gap:50px;
-
+.connect_container2 {
+  align-items: center;
+  display: flex;
+  position: relative;
+  padding: 40px 80px 80px;
+  gap: 60px;
 }
 
-.connect_container{
-    background:linear-gradient(to bottom,#0B0226  , #3A2773);
-    width:100%;
+/* Image */
+.connect-image {
+  width: 50%;
+  border-radius: var(--card-radius);
+  opacity: 0.9;
+  transition: var(--transition-base);
 }
 
-.connect_form{
-    width:40%;
-    position:relative;
+.connect-image:hover {
+  opacity: 1;
+  transform: scale(1.02);
 }
+
+/* Form — Glassmorphic Card */
+.connect_form {
+  width: 45%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  padding: 36px;
+  position: relative;
+}
+
+/* Labels */
+.connect_input_label {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  padding: 0px 2px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.connect_input_label:first-child {
+  margin-top: 0;
+}
+
+/* Inputs */
 .connect_input {
-    background: none;
-    border: 1px solid #B3CAFF;
-    border-radius: 5px;
-    padding: 10px;
-    width: 95%;
-    position: relative;
-    color:#B3CAFF;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius-sm);
+  padding: 14px 16px;
+  width: 100%;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  transition: var(--transition-base);
+  outline: none;
 }
 
+.connect_input:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
 
 .connect_input::placeholder {
-    color: #B3CAFF;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
+  color: var(--text-dim);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
 
-.connect_input_label{
-    margin-top:20px;
-    font-size: 15px;
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    
-    padding: 0px 5px;
+#connect_textarea {
+  height: 150px;
+  resize: vertical;
 }
 
-
-#connect_textarea{
-    height:150px;
+/* Send Button */
+.connect_button {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--pill-radius);
+  padding: 12px 32px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: var(--transition-base);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+  letter-spacing: 0.3px;
+  position: relative;
+  overflow: hidden;
 }
 
-.connect_button{
-    background: #B3CAFF;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: #0B0226;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    position: relative;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-.connect_button:hover{
-    background: #D6E2FF;
-    transition: 0.3s;
+.connect_button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: var(--transition-base);
 }
 
-.connect-image{
-    
+.connect_button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.3);
 }
 
-@media screen and (max-width:1000px){
-    .connect_container2{
-        display:flex;
-        align-items: center;
-        padding:30px;
-    }
-    #connect_textarea{
-        height:100px;
-    }
+.connect_button:hover::before {
+  opacity: 1;
 }
 
+/* Responsive */
+@media screen and (max-width: 1000px) {
+  .connect_container2 {
+    padding: 30px 40px 60px;
+    gap: 40px;
+  }
 
-@media screen and (max-width:800px){
-    .connect_container{
-        /* margin-top:-1px; */
-        /* margin-bottom:-1px; */
-        /* padding:40px; */
-    }
-    .connect-image{
-        display:none;
-    }
-    .connect_input_label
-    .connect_container2{
-        flex-direction: column;
-        /* padding: 10px; */
-    }
-    .connect_form{
-        width:95%;
-    }
-    .connect_input{
-        width: 95%;
-    }
-    .connect_button{
-        /* width: 100%; */
-    }
+  #connect_textarea {
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .connect-image {
+    display: none;
+  }
+
+  .connect_container2 {
+    flex-direction: column;
+    padding: 20px 24px 60px;
+  }
+
+  .connect_form {
+    width: 100%;
+    padding: 28px;
+  }
+
+  .connect_input {
+    width: 100%;
+  }
 }

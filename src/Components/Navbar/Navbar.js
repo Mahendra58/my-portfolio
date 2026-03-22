@@ -10,7 +10,7 @@ import academics from '../../Images/navbar/academics.svg';
 import projects from '../../Images/navbar/projects.svg';
 import experiences from '../../Images/navbar/experience.svg';
 import skills from '../../Images/navbar/skills.svg';
-
+import blogs from '../../Images/navbar/blogs.svg';
 import connect from '../../Images/navbar/connect.svg';
 
 
@@ -45,12 +45,20 @@ const Navbar = ({ activeSection }) => {
                         Home
                     </ScrollLink>
                     <ScrollLink
-                        className={`navbar-link ${activeSection === "academics" ? "active" : ""}`}
-                        to="academics"
+                        className={`navbar-link ${activeSection === "education" ? "active" : ""}`}
+                        to="education"
                         smooth={true}
                         duration={1000}
                     >
-                        Academics
+                        Education
+                    </ScrollLink>
+                    <ScrollLink
+                        className={`navbar-link ${activeSection === "certificates" ? "active" : ""}`}
+                        to="certificates"
+                        smooth={true}
+                        duration={1000}
+                    >
+                        Certificates
                     </ScrollLink>
                     <ScrollLink
                         className={`navbar-link ${activeSection === "projects" ? "active" : ""}`}
@@ -99,12 +107,20 @@ const Navbar = ({ activeSection }) => {
                             <img src={home} alt="Home" />
                         </ScrollLink>
                         <ScrollLink
-                            className={`navbar-link ${activeSection === "academics" ? "active" : ""}`}
-                            to="academics"
+                            className={`navbar-link ${activeSection === "education" ? "active" : ""}`}
+                            to="education"
                             smooth={true}
                             duration={1000}
                         >
-                            <img src={academics} alt="Academics" />
+                            <img src={academics} alt="Education" />
+                        </ScrollLink>
+                        <ScrollLink
+                            className={`navbar-link ${activeSection === "certificates" ? "active" : ""}`}
+                            to="certificates"
+                            smooth={true}
+                            duration={1000}
+                        >
+                            <img src={blogs} alt="Certificates" />
                         </ScrollLink>
                         <ScrollLink
                             className={`navbar-link ${activeSection === "projects" ? "active" : ""}`}

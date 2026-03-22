@@ -1,67 +1,93 @@
-#skills_heading{
-    background: linear-gradient(to bottom, #0B0226, #0B0226);
+/* =============================================
+   SKILLS — Badge Grid with Glow Hover
+   ============================================= */
 
+#skills_heading {
+  background: transparent;
 }
 
-.skills_content2{
-    background: linear-gradient(to bottom, #0B0226,#3A2773);
-
-    display:flex;
-    flex-wrap: wrap;
-    gap:50px;
-    padding:30px 80px;
+.skill {
+  background: transparent;
 }
 
-.skill_item_heading{
-    font-size:20px;
-    color:#D6E2FF;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    padding:10px 0px;
-    margin-bottom:0px;
+.skills_content2 {
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 80px 80px;
 }
 
-.skill_item{
-
-    /* max-width:50%; */
-}
-.skill_item_tools{
-    display:flex;
-    flex-wrap: wrap;
-    gap:10px;
-
+.skill_item {
+  flex: 1;
+  min-width: 200px;
 }
 
-.skill_item_tool{
-    background-color: #B3CAFF;
-    color:#0B0226;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    border-radius:14px;
-    padding:5px 10px;
-    font-size:15px;
-    box-shadow: 0px 4px 3px 0px rgb(21, 47, 95);
-    transition: 0.3s;
-    cursor: pointer;
-}
-.skill_item_tool_ani{
-    transition: 0.3s;
-}
-.skill_item_tool_ani:hover{
-    transform:translateY(-5px);
-    transition: 0.3s;
+.skill_item_heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  padding: 10px 0;
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
 }
 
+.skill_item_tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-@media screen and (max-width:700px){
-    .skills_content2{
-        padding:30px 40px;
-    }
-    .skill_item{
-        max-width:100%;
-    }
-    .skill_item_tools{
-        gap:5px;
-        margin:0px;
-    }
+.skill_item_tool {
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border-radius: var(--pill-radius);
+  padding: 8px 16px;
+  font-size: 13px;
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-base);
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.skill_item_tool_ani {
+  transition: var(--transition-base);
+}
+
+.skill_item_tool_ani:hover {
+  transform: translateY(-4px);
+}
+
+.skill_item_tool_ani:hover .skill_item_tool {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+  background: rgba(99, 102, 241, 0.08);
+  color: #fff;
+}
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+  .skills_content2 {
+    padding: 30px 24px 60px;
+    gap: 30px;
+  }
+
+  .skill_item {
+    min-width: 100%;
+  }
+
+  .skill_item_tools {
+    gap: 8px;
+  }
+
+  .skill_item_tool {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }

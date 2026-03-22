@@ -1,16 +1,74 @@
-.home{
-    /* border:1px solid black; */
-    padding:0px;
-    margin:0px;
-    margin-top:-20px;
-    overflow-y:hidden;
-    overflow-x:hidden;
-    box-sizing: border-box;
-    position: relative;
-    
+/* =============================================
+   HOME PAGE — Multi-Layer Premium Background
+   ============================================= */
+
+.home {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  background: transparent;
 }
 
-*{
-    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
+/* ── All sections sit above background layers ── */
+.home > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Navbar must always be on top ── */
+.home > .navbar {
+  z-index: 10000;
+  position: relative;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Subtle dot grid on odd sections
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.home > div:nth-child(odd)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+  background-size: 28px 28px;
+  z-index: 0;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Alternating section backgrounds for depth
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.home > div:nth-child(even) {
+  background: rgba(14, 18, 37, 0.85);
+}
+
+.home > div:nth-child(odd) {
+  background: rgba(11, 15, 25, 0.7);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Gradient dividers between sections
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.home > div + div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.2),
+    rgba(168, 85, 247, 0.35),
+    rgba(236, 72, 153, 0.2),
+    transparent
+  );
+  z-index: 2;
+}

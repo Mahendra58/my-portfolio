@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import Hero from '../../Components/Hero/Hero';
 import Academics from '../../Components/Academics/Academics';
+import Education from '../../Components/Education/Education';
+import Certificates from '../../Components/Certificates/Certificates';
 import Projects from '../../Components/Projects/Projects';
 import Experiences from '../../Components/Experiences/Experiences';
 import Skills from '../../Components/Skills/Skills';
@@ -14,6 +16,8 @@ const Home = () => {
     // Create references for each section
     const heroRef = useRef(null);
     const academicsRef = useRef(null);
+    const educationRef = useRef(null);
+    const certificatesRef = useRef(null);
     const projectsRef = useRef(null);
     const experiencesRef = useRef(null);
     const skillsRef = useRef(null);
@@ -43,6 +47,8 @@ const Home = () => {
         // Start observing each section
         if (heroRef.current) observer.observe(heroRef.current);
         if (academicsRef.current) observer.observe(academicsRef.current);
+        if (educationRef.current) observer.observe(educationRef.current);
+        if (certificatesRef.current) observer.observe(certificatesRef.current);
         if (projectsRef.current) observer.observe(projectsRef.current);
         if (experiencesRef.current) observer.observe(experiencesRef.current);
         if (skillsRef.current) observer.observe(skillsRef.current);
@@ -60,6 +66,8 @@ const Home = () => {
             <Navbar activeSection={activeSection} />
             <div ref={heroRef} className="hero123" id="hero"><Hero /></div>
             <div ref={academicsRef} id="academics"><Academics /></div>
+            <div ref={educationRef} id="education"><Education /></div>
+            <div ref={certificatesRef} id="certificates"><Certificates /></div>
             <div ref={projectsRef} id="projects"><Projects /></div>
             <div ref={experiencesRef} id="experiences"><Experiences /></div>
             <div ref={skillsRef} id="skills"><Skills /></div>

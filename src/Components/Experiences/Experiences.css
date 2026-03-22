@@ -1,30 +1,107 @@
-#experiences_heading{
-    background:linear-gradient(to bottom, #0B0226,#0B0226);
+/* =============================================
+   EXPERIENCES — Timeline + Glass Cards
+   ============================================= */
+
+.experiences {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
 }
 
-.experiences{
-    display:flex;
-    flex-direction:column;
+#experiences_heading {
+  background: transparent;
 }
 
-.experiences_container{
-    gap:30px;
-    display:flex;
-    flex-direction: column;
-    padding:80px 80px;
-    padding-top:100px;
-    background:linear-gradient(to bottom  , #0B0226,#0B0226);
-    /* width:100%; */
-    
+.experiences_container {
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 80px;
+  padding-top: 80px;
+  background: transparent;
+  position: relative;
 }
 
-#experiences_item{
-    box-shadow: none;
-    background: none;
+/* Timeline line */
+.experiences_container::before {
+  content: '';
+  position: absolute;
+  left: 60px;
+  top: 80px;
+  bottom: 60px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent-blue),
+    var(--accent-purple),
+    transparent
+  );
+  border-radius: 1px;
 }
 
-@media screen and (max-width:700px){
-    .experiences_container{
-        padding:80px 20px;
-    }
+/* Override base academic_item for experience */
+#experiences_item {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: none;
+  margin-left: 30px;
+  position: relative;
+}
+
+/* Timeline dot */
+#experiences_item::before {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 36px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
+}
+
+#experiences_item:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-glow-purple);
+  transform: translateY(-3px);
+  background: var(--bg-card-hover);
+}
+
+/* Duration badge */
+.academic_duration {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--bg-primary);
+  background: var(--gradient-primary);
+  padding: 4px 14px;
+  border-radius: var(--pill-radius);
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+  .experiences_container {
+    padding: 60px 24px;
+  }
+
+  .experiences_container::before {
+    left: 12px;
+    top: 60px;
+  }
+
+  #experiences_item {
+    margin-left: 20px;
+  }
+
+  #experiences_item::before {
+    left: -28px;
+    top: 28px;
+    width: 8px;
+    height: 8px;
+  }
 }

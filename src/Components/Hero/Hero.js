@@ -1,5 +1,5 @@
 import './Hero.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import profilepic from '../../Images/my-formal-photo.jpeg';
 import resume from '../../Images/resume.svg';
@@ -9,14 +9,33 @@ import AOS from 'aos';  // Import AOS
 import 'aos/dist/aos.css';  // Import AOS styles
 
 const Hero = () => {
+  const fullText = "Student @ Lovely Professional University";
+  const [displayText, setDisplayText] = useState('');
+  const [isTypingDone, setIsTypingDone] = useState(false);
+
   useEffect(() => {
     // Initialize AOS with custom settings
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true, // Ensures the animation triggers only once when it comes into view
-      startEvent: 'DOMContentLoaded', // Trigger AOS when the DOM is loaded
-      easing: 'ease-in-out', // Easing function for the animations
+      duration: 1200,
+      once: true,
+      startEvent: 'DOMContentLoaded',
+      easing: 'ease-out-cubic',
     });
+  }, []);
+
+  // Typing animation
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        setIsTypingDone(true);
+        clearInterval(timer);
+      }
+    }, 60);
+    return () => clearInterval(timer);
   }, []);
 
   // Helper function to conditionally apply AOS animations with delay
@@ -35,9 +54,9 @@ const Hero = () => {
           <h3 className="hero_name2">B.Tech CSE/IT</h3>
         </div>
 
-        {/* Education Section with AOS Animation */}
+        {/* Education Section with Typing Animation */}
         <div {...getAosData("fade-up", 100)} className="hero_education">
-          <h1 className="hero_education1">Student @ Lovely Professional University</h1>
+          <h1 className={`hero_education1${isTypingDone ? ' typing-done' : ''}`}>{displayText}</h1>
         </div>
 
         {/* About Section with AOS Animation */}
