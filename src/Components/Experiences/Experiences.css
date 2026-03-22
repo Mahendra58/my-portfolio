@@ -1,0 +1,30 @@
+#experiences_heading{
+    background:linear-gradient(to bottom, #0B0226,#0B0226);
+}
+
+.experiences{
+    display:flex;
+    flex-direction:column;
+}
+
+.experiences_container{
+    gap:30px;
+    display:flex;
+    flex-direction: column;
+    padding:80px 80px;
+    padding-top:100px;
+    background:linear-gradient(to bottom  , #0B0226,#0B0226);
+    /* width:100%; */
+    
+}
+
+#experiences_item{
+    box-shadow: none;
+    background: none;
+}
+
+@media screen and (max-width:700px){
+    .experiences_container{
+        padding:80px 20px;
+    }
+}

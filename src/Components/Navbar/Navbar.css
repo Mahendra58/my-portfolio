@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.navbar {
+    border: 1px solid black;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    margin: 0px;
+    z-index: 1000;
+}
+
+.navbar__links {
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    border-radius: 15px;
+    position: fixed;
+    align-self: center;
+    top: 60px;
+    background: linear-gradient(to bottom, #30215f, #5236A7);
+}
+
+.navbar-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    padding: 14px 23px;
+    transition: background-color 0.3s;
+}
+
+.navbar-link:hover {
+    background: linear-gradient(to bottom, #B3CAFF, #a05ddb);
+    border-radius: 15px;
+    color: #0B0226;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+/* Navbar for Desktop */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.navbar__links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-link {
+    color: white;
+    text-decoration: none;
+    /* padding: 10px; */
+    transition: color 0.3s;
+}
+
+.navbar-link:hover {
+    background-color: #555;
+    transition: background-color 0.3s;
+
+}
+
+.navbar-link.active {
+    background: linear-gradient(to bottom, #B3CAFF, #6076a9);
+    border-radius: 15px;
+    color: #0B0226;
+    text-decoration: none;
+    transition:background-color 0.3s;
+}
+
+#navbar-mobile {
+    display: none; /* Initially hide mobile navbar */
+}
+
+
+@media screen and (max-width: 600px) {
+    /* Hide desktop navbar and show mobile navbar */
+    #navbar-desktop {
+        display: none;
+    }
+    #navbar-mobile{
+        border:1px solid white;
+        display:flex;
+        justify-content: center;
+        position: fixed;
+    }
+    
+    #nav-mobile{
+        top:-11px;
+        width:86%;
+        
+    }
+    .navbar__links {
+        display: flex;
+        flex-direction: row; /* Keep items in a row */
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-link {
+        padding: 8px 10px;
+        font-size: 18px;
+        width: auto;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .navbar-link img {
+        width: 20px;  /* Adjust image size */
+        height: 20px;
+        /* margin-bottom: 5px; */
+    }
+
+    .navbar-link:hover {
+        background-color: #555;
+    }
+
+    .navbar-link.active {
+        background: linear-gradient(to bottom, #B3CAFF, #6076a9);
+        border-radius: 15px;
+        color: #0B0226;
+        text-decoration: none;
+    }
+}
