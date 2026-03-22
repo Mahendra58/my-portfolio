@@ -6,13 +6,13 @@ import './Experiences.css';
 const Experiences = () => {
   const experiences = [
     {
-      name: "Full Stack Developer",
-      role: "MERN Stack Developer",
-      location: "LPU, Punjab",
-      technologies: "React.js, Node.js, Express.js, MongoDB, Tailwind CSS, Vite",
-      projects: "Alumni Association Platform, MERN Vendor Manager System, Online Election Voting System.",
-      duration: "2024 - Present",
-      description: "As a Full Stack Developer specializing in the MERN stack, I have built scalable and responsive web applications with complete authentication systems, CRUD operations, and deployment-ready architectures. My work includes developing the Alumni Association Platform with features like alumni registration, donation portals, networking hubs, and job portals, as well as the MERN Vendor Manager System featuring vendor data management and backend API integration. I also created an Online Election Voting System with secure voting and real-time result visualization. I focus on writing clean, maintainable code and deploying applications on platforms like Render and Vercel."
+      name: "Online Training",
+      role: "Mastering DSA with C++",
+      location: "Online",
+      technologies: "C++, Data Structures, Algorithms, File Handling",
+      projects: "Developed a final project in C++",
+      duration: "Jul’ 25 - Aug’ 25",
+      description: "Completed an online internship focused on Data Structures and Algorithms and file handling in C++. Attended instructor-led sessions, developed a final project in C++, and successfully cleared the final viva evaluation."
     }
   ];
 

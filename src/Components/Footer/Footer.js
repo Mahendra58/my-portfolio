@@ -2,7 +2,7 @@ import "./Footer.css";
 import linkedin from "../../Images/linkedin.svg";
 import github from "../../Images/github.svg";
 import leetcode from "../../Images/leetcode.svg";
-import profilepic from "../../Images/profile_pic.png";
+import profilepic from "../../Images/my-formal-photo.jpeg";
 
 const Footer = () => {
     return (
